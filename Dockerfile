@@ -8,6 +8,10 @@ RUN wget -O /usr/bin/winetricks https://raw.githubusercontent.com/Winetricks/win
 COPY init-install.sh /init-install.sh
 COPY startapp.sh /startapp.sh
 
+# Set remote resizing as default
+# https://github.com/jlesage/docker-baseimage-gui/issues/112
+RUN sed -i "s/resize = 'scale';/resize = 'remote';/g" /opt/noVNC/app/ui.js
+
 # ensure script permissions
 RUN chmod a+rx /startapp.sh && chmod a+rx /init-install.sh
 
