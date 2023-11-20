@@ -12,17 +12,45 @@ This container is based on the absolutely fantastic [jlesage/baseimage-gui](http
 
 ## Usage
 
-**NOTE**: `docker-compose.yml` is preferred to configure and start your container.
+Here is an example of a `docker-compose.yml` file that can be used with
+[Docker Compose](https://docs.docker.com/compose/overview/).
+
+Make sure to adjust according to your needs.  Note that only mandatory network
+ports are part of the example.
+
+```yaml
+version: '3.8'
+services:
+  loxone-config:
+    image: "ghcr.io/lian/docker-loxone-config:main"
+    container_name: loxone-config
+    ports:
+      - "5800:5800"
+    environment:
+      - VNC_PASSWORD=test
+      - USER_ID=1000
+      - GROUP_ID=1000
+      - DISPLAY_WIDTH=1920
+      - DISPLAY_HEIGHT=1080
+      - HOME=/config/
+      - WINEPREFIX=/config/wine
+    volumes:
+      - "./config:/config:rw"
+```
 
 **NOTE**: On first launch, the required fonts, libraries and Loxone Config are installed into `/config/wine`. Further launches skip this step. To start clean again, delete `/config/wine`.
 
-Launch the Loxone Config docker container with the following command:
+Launch the Loxone Config docker container with the following commands:
 
 ```shell
-docker compose up
+# create empty config directory
+mkdir -p config
 
-# or if you updated this git repo
-docker compose up --build --force-recreate
+# ensure USER_ID and GROUP_ID from docker-compose.yml are correct
+id
+
+# start loxone config container
+docker compose up
 ```
 
 Browse to `http://your-host-ip:5800` to access the Loxone Config GUI.

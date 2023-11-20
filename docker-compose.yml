@@ -1,11 +1,12 @@
 version: '3.8'
 services:
   loxone-config:
-    image: "local/loxone-config:latest"
+    #image: "local/loxone-config:latest"
+    image: "ghcr.io/lian/docker-loxone-config:main"
     container_name: loxone-config
-    build:
-      context: .
-      dockerfile: Dockerfile
+    #build:
+    #  context: .
+    # dockerfile: Dockerfile
     ports:
       - "5800:5800"
     environment:
