@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  loxone-config:
+    image: "local/loxone-config:latest"
+    container_name: loxone-config
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5800:5800"
+    environment:
+      - HOME=/config/
+      - WINEPREFIX=/config/wine
+    volumes:
+      - "./config:/config:rw"
