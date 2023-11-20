@@ -10,15 +10,11 @@ This container is based on the absolutely fantastic [jlesage/baseimage-gui](http
 
 ---
 
-## Download required files
-
-Download [Loxone Config 1x.x.x.xx Installer](https://www.loxone.com/dede/support/downloads/) and put unpacked `LoxoneConfigSetup.exe` at `./config/LoxoneConfigSetup.exe`
-
 ## Usage
 
 **NOTE**: `docker-compose.yml` is preferred to configure and start your container.
 
-**NOTE**: On first launch, the required fonts, libraries and Loxone Config is installed into `/config/wine`. Further launches skip this step. To start clean again, delete `/config/wine`.
+**NOTE**: On first launch, the required fonts, libraries and Loxone Config are installed into `/config/wine`. Further launches skip this step. To start clean again, delete `/config/wine`.
 
 Launch the Loxone Config docker container with the following command:
 
