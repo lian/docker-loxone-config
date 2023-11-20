@@ -8,4 +8,7 @@ RUN wget -O /usr/bin/winetricks https://raw.githubusercontent.com/Winetricks/win
 COPY init-install.sh /init-install.sh
 COPY startapp.sh /startapp.sh
 
-RUN set-cont-env APP_NAME "LoxoneConfig"
+# ensure script permissions
+RUN chmod a+rx /startapp.sh && chmod a+rx /init-install.sh
+
+RUN set-cont-env APP_NAME "Loxone Config"
