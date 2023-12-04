@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ ! -d "/config/wine/drive_c" ]; then
+if [ ! -d "/config/wine/drive_c/Program Files/Loxone" ]; then
   xterm -e "/init-install.sh" || exit 1
 fi
 

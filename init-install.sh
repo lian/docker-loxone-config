@@ -25,8 +25,8 @@ fi
 export WINEDEBUG=-all
 
 echo Installing winetricks helper for fonts and sharper rendering..
-#/usr/bin/winetricks fontsmooth-rgb
-/usr/bin/winetricks corefonts
+/usr/bin/winetricks fontsmooth-rgb
+#/usr/bin/winetricks corefonts
 /usr/bin/winetricks gdiplus
 echo Installing LoxoneConfig..
 wine "/config/LoxoneConfigSetup.exe"

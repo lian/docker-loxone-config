@@ -15,5 +15,7 @@ services:
       - DISPLAY_HEIGHT=1080
       - HOME=/config/
       - WINEPREFIX=/config/wine
+      - WINEARCH=win32
     volumes:
       - "./config:/config:rw"
+      - "./config/Loxone:/config/wine/drive_c/users/app/Documents/Loxone:rw"
