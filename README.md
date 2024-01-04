@@ -228,3 +228,9 @@ docker exec -it loxone-config bash
 ## Getting Help
 
 Having troubles with the container or have questions?  Please [create a new issue](https://github.com/lian/docker-loxone-config/issues).
+
+## Thanks
+
+* [t_heinrich](https://www.loxforum.com/member/1843-t_heinrich) for bug reports
+* [timboettiger](https://github.com/timboettiger) for [keyboard maps](#keyboard-maps)
+
