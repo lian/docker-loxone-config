@@ -34,7 +34,7 @@ services:
       - DISPLAY_HEIGHT=1080
       - HOME=/config/
       - WINEPREFIX=/config/wine
-	  - XLANG=de
+      - XLANG=de
     volumes:
       - "./config:/config:rw"
 ```
