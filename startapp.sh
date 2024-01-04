@@ -5,5 +5,6 @@ if [ ! -d "/config/wine/drive_c/Program Files/Loxone" ]; then
 fi
 
 export WINEDEBUG=-all
+setxkbmap $XLANG
 #exec xterm
 exec wine "/config/wine/drive_c/Program Files/Loxone/LoxoneConfig/LoxoneConfig.exe"

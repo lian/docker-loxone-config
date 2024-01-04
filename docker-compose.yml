@@ -16,6 +16,7 @@ services:
       - HOME=/config/
       - WINEPREFIX=/config/wine
       - WINEARCH=win32
+      - XLANG=de
     volumes:
       - "./config:/config:rw"
       - "./config/Loxone:/config/wine/drive_c/users/app/Documents/Loxone:rw"
