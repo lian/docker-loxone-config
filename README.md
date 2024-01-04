@@ -34,6 +34,7 @@ services:
       - DISPLAY_HEIGHT=1080
       - HOME=/config/
       - WINEPREFIX=/config/wine
+	  - XLANG=de
     volumes:
       - "./config:/config:rw"
 ```
@@ -81,7 +82,7 @@ of this parameter has the format `<VARIABLE_NAME>=<VALUE>`.
 |`DISPLAY_HEIGHT`| Height (in pixels) of the application's window. | `768` |
 |`SECURE_CONNECTION`| When set to `1`, an encrypted connection is used to access the application's GUI (either via web browser or VNC client).  See the [Security](#security) section for more details. | `0` |
 |`VNC_PASSWORD`| Password needed to connect to the application's GUI.  See the [VNC Password](#vnc-password) section for more details. | (unset) |
-
+|`XLANG`| Keyboard map to be used by XVNC/Loxone Config. Use this to set specific keyboard maps via setxkbmap. See the [keyboard maps](#keyboard-maps) section for more details. | `de` |
 
 ### Ports
 
@@ -96,6 +97,21 @@ container cannot be changed, but you are free to use any port on the host side.
 | 5900 | Optional | Port used to access the application's GUI via the VNC protocol.  Optional if no VNC client is used. |
 
 **NOTE**: For additional security you should bind to localhost only to prevent other devices in your network from accessing the Loxone Config. `127.0.0.1:5800:5800` instead of `5800:5800` inside `docker-compose.yml`.
+
+### Keyboard maps
+
+Keyboard maps are set via setxkbmap. See the [setxkbmap configuration options](https://gist.github.com/jatcwang/ae3b7019f219b8cdc6798329108c9aee) section "layout" for more details.
+
+Common keyboard maps are:
+
+| map | Language | Default |
+|-----|----------| ------- |
+| us | English (US) | - |
+| en | English | - |
+| at | German (Austria) | - |
+| ch | German (Switzerland) | - |
+| de | German | yes |
+| fr | French | - |
 
 ## User/Group IDs
 
